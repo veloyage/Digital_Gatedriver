@@ -321,8 +321,8 @@
                                      PIN_OTYPE_PUSHPULL(GPIOA_PIN15))
 #define VAL_GPIOA_OSPEEDR           (PIN_OSPEED_VERYLOW(GPIOA_AIN1) |       \
                                      PIN_OSPEED_VERYLOW(GPIOA_AIN2) |       \
-                                     PIN_OSPEED_VERYLOW(GPIOA_TX) |  \
-                                     PIN_OSPEED_VERYLOW(GPIOA_RX) |  \
+                                     PIN_OSPEED_HIGH(GPIOA_TX) |  \
+                                     PIN_OSPEED_HIGH(GPIOA_RX) |  \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN4) |       \
                                      PIN_OSPEED_HIGH(GPIOA_PIN5) |          \
                                      PIN_OSPEED_VERYLOW(GPIOA_PIN6) |       \
@@ -369,8 +369,8 @@
                                      PIN_ODR_LOW(GPIOA_PIN15))
 #define VAL_GPIOA_AFRL              (PIN_AFIO_AF(GPIOA_AIN1, 0U) |          \
                                      PIN_AFIO_AF(GPIOA_AIN2, 0U) |          \
-                                     PIN_AFIO_AF(GPIOA_TX, 7U) |    \
-                                     PIN_AFIO_AF(GPIOA_RX, 7U) |    \
+                                     PIN_AFIO_AF(GPIOA_TX, 07U) |    \
+                                     PIN_AFIO_AF(GPIOA_RX, 07U) |    \
                                      PIN_AFIO_AF(GPIOA_PIN4, 0U) |          \
                                      PIN_AFIO_AF(GPIOA_PIN5, 0U) |          \
                                      PIN_AFIO_AF(GPIOA_PIN6, 0U) |          \

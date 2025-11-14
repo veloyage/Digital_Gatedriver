@@ -112,7 +112,7 @@ const ShellConfig shell_cfg1 =
 
 const ShellConfig shell_cfg2 =
 {
- (BaseSequentialStream *)&SIOD2,
+ (BaseSequentialStream *)&SD2,
  commands
 };
 
@@ -173,7 +173,8 @@ int main(void)
   chSysInit();
 
   // Activates the SIO driver using the default configuration.
-  sioStart(&SIOD2, NULL);
+  //sioStart(&SIOD2, NULL);
+  sdStart(&SD2, NULL);
 
   // Initialize a serial-over-USB CDC driver
   sduObjectInit(&SDU1);

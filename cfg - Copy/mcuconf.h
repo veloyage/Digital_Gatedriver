@@ -69,7 +69,7 @@
 #define STM32_SW                            STM32_SW_PLLRCLK
 #define STM32_PLLSRC                        STM32_PLLSRC_HSI16
 #define STM32_PLLM_VALUE                    1
-#define STM32_PLLN_VALUE                    21 //25 for 200 MHz
+#define STM32_PLLN_VALUE                    25
 #define STM32_PLLPDIV_VALUE                 2
 #define STM32_PLLP_VALUE                    7
 #define STM32_PLLQ_VALUE                    2
@@ -305,7 +305,7 @@
  * SERIAL driver system settings.
  */
 #define STM32_SERIAL_USE_USART1             FALSE
-#define STM32_SERIAL_USE_USART2             TRUE
+#define STM32_SERIAL_USE_USART2             FALSE
 #define STM32_SERIAL_USE_USART3             FALSE
 #define STM32_SERIAL_USE_UART4              FALSE
 #define STM32_SERIAL_USE_UART5              FALSE
@@ -319,7 +319,7 @@
 #define STM32_SIO_USE_USART3                FALSE
 #define STM32_SIO_USE_UART4                 FALSE
 #define STM32_SIO_USE_UART5                 FALSE
-#define STM32_SIO_USE_LPUART1               FALSE
+#define STM32_SIO_USE_LPUART1               TRUE
 
 /*
  * SPI driver system settings.
