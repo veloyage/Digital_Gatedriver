@@ -37,7 +37,7 @@ extern volatile bool DD_test_running_flag;
 // #########################
 
 BaseSequentialStream * chp_USB = (BaseSequentialStream *) &SDU1;
-BaseSequentialStream * chp_OPTICAL = (BaseSequentialStream *) &SIOD2;
+BaseSequentialStream * chp_OPTICAL = (BaseSequentialStream *) &SD2;
 BaseSequentialStream * chp_shell;
 
 const ShellConfig shell_cfg1, shell_cfg2;
