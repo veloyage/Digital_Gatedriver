@@ -1,5 +1,5 @@
 /*
-    ChibiOS - Copyright (C) 2006..2025 Giovanni Di Sirio
+    ChibiOS - Copyright (C) 2006..2020 Giovanni Di Sirio
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@
 #define HALCONF_H
 
 #define _CHIBIOS_HAL_CONF_
-#define _CHIBIOS_HAL_CONF_VER_9_0_
+#define _CHIBIOS_HAL_CONF_VER_8_4_
 
 #include "mcuconf.h"
 
@@ -210,7 +210,7 @@
  * @note    Disabling this option saves both code and data space.
  */
 #if !defined(PAL_USE_CALLBACKS) || defined(__DOXYGEN__)
-#define PAL_USE_CALLBACKS                   FALSE
+#define PAL_USE_CALLBACKS                   TRUE
 #endif
 
 /**
@@ -218,7 +218,7 @@
  * @note    Disabling this option saves both code and data space.
  */
 #if !defined(PAL_USE_WAIT) || defined(__DOXYGEN__)
-#define PAL_USE_WAIT                        FALSE
+#define PAL_USE_WAIT                        TRUE
 #endif
 
 /*===========================================================================*/
@@ -306,14 +306,6 @@
 /*===========================================================================*/
 
 /**
- * @brief   Slave mode API enable switch.
- * @note    The low level driver must support this capability.
- */
-#if !defined(I2C_ENABLE_SLAVE_MODE)
-#define I2C_ENABLE_SLAVE_MODE               FALSE
-#endif
-
-/**
  * @brief   Enables the mutual exclusion APIs on the I2C bus.
  */
 #if !defined(I2C_USE_MUTUAL_EXCLUSION) || defined(__DOXYGEN__)
@@ -335,7 +327,7 @@
  * @brief   Enables an event sources for incoming packets.
  */
 #if !defined(MAC_USE_EVENTS) || defined(__DOXYGEN__)
-#define MAC_USE_EVENTS                      FALSE
+#define MAC_USE_EVENTS                      TRUE
 #endif
 
 /*===========================================================================*/

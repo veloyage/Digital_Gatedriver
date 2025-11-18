@@ -30,7 +30,7 @@ endif
 
 # Enable this if you want link time optimizations (LTO).
 ifeq ($(USE_LTO),)
-  USE_LTO = no
+  USE_LTO = yes
 endif
 
 # Enable this if you want to see the full log while compiling.
@@ -89,7 +89,7 @@ PROJECT = APS_DIGITAL_CGG
 MCU  = cortex-m4
 
 # Imported source files and paths.
-CHIBIOS  := ../../chibios21114
+CHIBIOS  := ../../chibios2111
 CONFDIR  := ./cfg
 BUILDDIR := ./build
 DEPDIR   := ./.dep

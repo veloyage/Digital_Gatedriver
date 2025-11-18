@@ -172,7 +172,7 @@ int main(void)
   halInit();
   chSysInit();
 
-  // Activates the SIO driver using the default configuration.
+  // Activates the serial driver using the default configuration.
   sdStart(&SD2, NULL);
 
   // Initialize a serial-over-USB CDC driver

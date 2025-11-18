@@ -174,7 +174,7 @@ void cmd_DD_test(BaseSequentialStream *chp, int argc, char *argv[])
         return;
       }
 
-      if (hold_time < 4.9e-6 || hold_time > 4000)
+      if (hold_time != 0 && (hold_time < 4.9e-6 || hold_time > 4000))
       {
         chprintf(chp, "Error: Hold time has to be between 5us and 4000s.\r\n");
         return;
@@ -234,8 +234,10 @@ void cmd_DD_test(BaseSequentialStream *chp, int argc, char *argv[])
     chprintf(chp, "Error: Mode is not valid.\r\n");
     return;
   }
-  if (hold_time > -0.1)
+  if (hold_time > 0)
     chprintf(chp, "Hold time between ramps is %.3f us.\r\n", hold_time*1e6);
+  else if (hold_time == 0)
+    chprintf(chp, "0 hold time set - no hold between ramps.\r\n");
   chprintf(chp, "To start the measurement enter 'start'. To abort, enter anything else; to stop the process after starting, enter 'stop'.\r\n");
 
   ShellConfig current_shell_cfg = {chp, NULL};
