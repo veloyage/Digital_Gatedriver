@@ -37,6 +37,30 @@
 #define STM32G474_MCUCONF
 #define STM32G484_MCUCONF
 
+
+// increased clock limits to allow running at 200 MHz, need to be set primarily in \os\hal\ports\STM32\STM32G4xx\hal_lld.h
+#define STM32_BOOST_SYSCLK_MAX          200000000
+#define STM32_BOOST_HSECLK_MAX          48000000
+#define STM32_BOOST_HSECLK_BYP_MAX      48000000
+#define STM32_BOOST_HSECLK_MIN          8000000
+#define STM32_BOOST_HSECLK_BYP_MIN      8000000
+#define STM32_BOOST_LSECLK_MAX          32768
+#define STM32_BOOST_LSECLK_BYP_MAX      1000000
+#define STM32_BOOST_LSECLK_MIN          32768
+#define STM32_BOOST_LSECLK_BYP_MIN      32768
+#define STM32_BOOST_PLLIN_MAX           16000000
+#define STM32_BOOST_PLLIN_MIN           2660000
+#define STM32_BOOST_PLLVCO_MAX          400000000
+#define STM32_BOOST_PLLVCO_MIN          96000000
+#define STM32_BOOST_PLLP_MAX            200000000
+#define STM32_BOOST_PLLP_MIN            2064500
+#define STM32_BOOST_PLLQ_MAX            200000000
+#define STM32_BOOST_PLLQ_MIN            8000000
+#define STM32_BOOST_PLLR_MAX            200000000
+#define STM32_BOOST_PLLR_MIN            8000000
+#define STM32_BOOST_PCLK1_MAX           200000000
+#define STM32_BOOST_PCLK2_MAX           200000000
+
 /*
  * HAL driver system settings.
  */
@@ -69,7 +93,7 @@
 #define STM32_SW                            STM32_SW_PLLRCLK
 #define STM32_PLLSRC                        STM32_PLLSRC_HSI16
 #define STM32_PLLM_VALUE                    1
-#define STM32_PLLN_VALUE                    25
+#define STM32_PLLN_VALUE                    25 //25 for 200 MHz
 #define STM32_PLLPDIV_VALUE                 2
 #define STM32_PLLP_VALUE                    7
 #define STM32_PLLQ_VALUE                    2
@@ -224,7 +248,7 @@
 #define STM32_GPT_USE_TIM1                  FALSE
 #define STM32_GPT_USE_TIM2                  FALSE
 #define STM32_GPT_USE_TIM3                  FALSE
-#define STM32_GPT_USE_TIM4                  TRUE
+#define STM32_GPT_USE_TIM4                  FALSE
 #define STM32_GPT_USE_TIM5                  TRUE
 #define STM32_GPT_USE_TIM6                  FALSE
 #define STM32_GPT_USE_TIM7                  FALSE
@@ -305,7 +329,7 @@
  * SERIAL driver system settings.
  */
 #define STM32_SERIAL_USE_USART1             FALSE
-#define STM32_SERIAL_USE_USART2             FALSE
+#define STM32_SERIAL_USE_USART2             TRUE
 #define STM32_SERIAL_USE_USART3             FALSE
 #define STM32_SERIAL_USE_UART4              FALSE
 #define STM32_SERIAL_USE_UART5              FALSE
@@ -319,7 +343,7 @@
 #define STM32_SIO_USE_USART3                FALSE
 #define STM32_SIO_USE_UART4                 FALSE
 #define STM32_SIO_USE_UART5                 FALSE
-#define STM32_SIO_USE_LPUART1               TRUE
+#define STM32_SIO_USE_LPUART1               FALSE
 
 /*
  * SPI driver system settings.

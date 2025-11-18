@@ -173,7 +173,6 @@ int main(void)
   chSysInit();
 
   // Activates the SIO driver using the default configuration.
-  //sioStart(&SIOD2, NULL);
   sdStart(&SD2, NULL);
 
   // Initialize a serial-over-USB CDC driver
@@ -214,8 +213,8 @@ int main(void)
   {
     chprintf(chp_OPTICAL, "Ziemann Engineering CGG digital 1.0\r\n");
     // start serial IO shell thread
-    thread_t *SIOshelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell_SIO", NORMALPRIO + 1, shellThread, (void *)&shell_cfg2);
-    SIOshelltp->name = "shell_SIO"; // name is set to default during creation, set again
+    thread_t *optical_shelltp = chThdCreateFromHeap(NULL, SHELL_WA_SIZE, "shell_optical", NORMALPRIO + 1, shellThread, (void *)&shell_cfg2);
+    optical_shelltp->name = "shell_optical"; // name is set to default during creation, set again
     chp_shell = chp_OPTICAL;
   }
 
